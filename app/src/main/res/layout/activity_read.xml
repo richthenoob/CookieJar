@@ -31,7 +31,11 @@
         android:id="@+id/single"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:fontFamily="casual"
         android:text='"Placeholder"'
+        android:textSize="32sp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
