@@ -42,6 +42,15 @@ public class CookieListAdapter extends RecyclerView.Adapter<CookieListAdapter.Co
         notifyDataSetChanged();
     }
 
+    void setWord(Cookie word){
+        mWords.add(word);
+        notifyDataSetChanged();
+    }
+
+    public Cookie getCookieAtPosition (int position) {
+        return mWords.get(position);
+    }
+
     // getItemCount() is called many times, and when it is first called,
     // mWords has not been updated (means initially, it's null, and we can't return null).
     @Override

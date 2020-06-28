@@ -12,11 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -44,6 +46,30 @@ public class Log extends AppCompatActivity {
                 adapter.setWords(words);
             }
         });
+        ItemTouchHelper helper = new ItemTouchHelper(
+                new ItemTouchHelper.SimpleCallback(0,
+                        ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+                    @Override
+                    public boolean onMove(RecyclerView recyclerView,
+                                          RecyclerView.ViewHolder viewHolder,
+                                          RecyclerView.ViewHolder target) {
+                        return false;
+                    }
+
+                    @Override
+                    public void onSwiped(RecyclerView.ViewHolder viewHolder,
+                                         int direction) {
+                        int position = viewHolder.getAdapterPosition();
+                        Cookie myWord = adapter.getCookieAtPosition(position);
+                        Toast.makeText(Log.this, "Deleting " +
+                                myWord.getCookie(), Toast.LENGTH_LONG).show();
+
+                        // Delete the word
+                        cookieViewModel.delete(myWord);
+                    }
+                });
+
+        helper.attachToRecyclerView(recyclerView);
     }
 
     public void back(View view) {
@@ -59,13 +85,5 @@ public class Log extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void delete(View view) {
-        android.util.Log.d(LOG_TAG, "Button clicked!");
-        TextView logEntry = findViewById(R.id.textView);
-        Cookie entry = new Cookie(logEntry.getText().toString());
-        cookieViewModel.delete(entry);
-        Intent intent = new Intent(this, Log.class);
-        startActivity(intent);
-    }
 
 }
