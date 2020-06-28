@@ -8,17 +8,16 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.lifecycle.LiveData;
+
+import java.util.Random;
+
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
+
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+
 import android.widget.TextView;
 
 import java.util.List;
@@ -35,14 +34,26 @@ public class Read extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read);
         cookieViewModel = ViewModelProviders.of(this).get(CookieViewModel.class);
-//        TextView textView = findViewById(R.id.single);
-//        textView.setText(cookieViewModel.getRand().getCookie());
+        cookieViewModel = ViewModelProviders.of(this).get(CookieViewModel.class);
+        final TextView textView = findViewById(R.id.single);
+        final Random random = new Random();
+        cookieViewModel.getAllWords().observe(this, new Observer<List<Cookie>>() {
+            @Override
+            public void onChanged(@Nullable final List<Cookie> words) {
+                if(words.isEmpty()){
+                    textView.setText(R.string.empty);
+                }
+                else{
+                    textView.setText(words.get(random.nextInt(words.size())).getCookie());
+            }}
+        });
+
     }
 
-        public void back (View view){
-            Log.d(LOG_TAG, "Button clicked!");
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        }
-
+    public void back(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
+
+}
