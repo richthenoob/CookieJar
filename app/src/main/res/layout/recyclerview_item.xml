@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android=
-    "http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_height="wrap_content">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/textView"
         style="@style/text_view_style"
-        android:layout_width="match_parent"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="top"
         android:background="@android:color/white"
         android:fontFamily="casual"
         android:textColor="@android:color/black"
         tools:text="placeholder text" />
+
+    <Button
+        android:id="@+id/delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@android:color/holo_red_light"
+        android:fontFamily="casual"
+        android:onClick="delete"
+        android:text="@string/delete"
+        android:textStyle="bold" />
+
 </LinearLayout>

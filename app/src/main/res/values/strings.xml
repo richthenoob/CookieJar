@@ -113,4 +113,5 @@
     <string name="empty_not_saved">\"Please enter an achievement\"</string>
     <string name="saved">\"Successfully Added\"</string>
     <string name="delete_all">CLEAR ALL</string>
+    <string name="delete">Delete</string>
 </resources>

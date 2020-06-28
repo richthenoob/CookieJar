@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.View;
+import android.widget.TextView;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -57,4 +58,14 @@ public class Log extends AppCompatActivity {
         Intent intent = new Intent(this, Log.class);
         startActivity(intent);
     }
+
+    public void delete(View view) {
+        android.util.Log.d(LOG_TAG, "Button clicked!");
+        TextView logEntry = findViewById(R.id.textView);
+        Cookie entry = new Cookie(logEntry.getText().toString());
+        cookieViewModel.delete(entry);
+        Intent intent = new Intent(this, Log.class);
+        startActivity(intent);
+    }
+
 }

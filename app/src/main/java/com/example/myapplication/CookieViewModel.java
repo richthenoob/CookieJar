@@ -34,6 +34,10 @@ public class CookieViewModel extends AndroidViewModel {
         mRepository.deleteAll();
     }
 
+    public void delete(Cookie word) {
+        mRepository.delete(word);
+    }
+
 //    LiveData<List<Cookie>> getRand() {
 //        LiveData<List<Cookie>> list = new MutableLiveData<List<Cookie>>;
 //        mRepository.getCurr();

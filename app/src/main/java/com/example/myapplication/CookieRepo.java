@@ -36,6 +36,10 @@ public class CookieRepo {
         new deleteAllAsyncTask(cookieDAO).execute();
     }
 
+    public void delete(Cookie word) {
+        new deleteAsyncTask(cookieDAO).execute(word);
+    }
+
 //    public void getRand() {
 //        curr = cookieDAO.getRandom();
 //    }
@@ -51,6 +55,21 @@ public class CookieRepo {
         @Override
         protected Void doInBackground(final Cookie... params) {
             mAsyncTaskDao.insert(params[0]);
+            return null;
+        }
+    }
+
+    private static class deleteAsyncTask extends android.os.AsyncTask<Cookie, Void, Void> {
+
+        private CookieDAO mAsyncTaskDao;
+
+        deleteAsyncTask(CookieDAO dao) {
+            mAsyncTaskDao = dao;
+        }
+
+        @Override
+        protected Void doInBackground(final Cookie... params) {
+            mAsyncTaskDao.delete(params[0]);
             return null;
         }
     }
