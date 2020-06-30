@@ -56,4 +56,10 @@ public class Read extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void randomize(View view) {
+        Log.d(LOG_TAG, "Button clicked!");
+        Intent intent = new Intent(this, Read.class);
+        startActivity(intent);
+    }
+
 }

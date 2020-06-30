@@ -43,6 +43,10 @@ public class Log extends AppCompatActivity {
             @Override
             public void onChanged(@Nullable final List<Cookie> words) {
                 // Update the cached copy of the words in the adapter.
+                for (Cookie word:
+                     words) {
+                    word.addSpace();
+                }
                 adapter.setWords(words);
             }
         });

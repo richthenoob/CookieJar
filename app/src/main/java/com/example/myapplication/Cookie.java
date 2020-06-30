@@ -21,4 +21,8 @@ public class Cookie {
         return this.mCookie;
     }
 
+    public String addSpace(){
+        return "    " + this.mCookie;
+    }
+
 }

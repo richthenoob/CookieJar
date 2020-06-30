@@ -107,13 +107,15 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_read">Read</string>
     <string name="add_hint">Achievement</string>
-    <string name="add_prompt">Enter something that made you proud of yourself</string>
+    <string name="add_prompt">Talk about a time when you endured a setback, overcome an obstacle or achieved a goal </string>
     <string name="back_button">BACK</string>
     <string name="title_activity_new_word">NewWordActivity</string>
-    <string name="empty_not_saved">\"Please enter an achievement\"</string>
-    <string name="saved">\"Successfully Added\"</string>
+    <string name="empty_not_saved">Please enter an achievement</string>
+    <string name="saved">Successfully Added</string>
     <string name="delete_all">CLEAR ALL</string>
     <string name="delete">Delete</string>
     <string name="swipe">Swipe to delete entry</string>
-    <string name="empty">\"No cookie found\"</string>
+    <string name="empty">No cookie found</string>
+    <string name="editText_hint">I overcame …</string>
+    <string name="randomize_button">RANDOMIZE</string>
 </resources>
