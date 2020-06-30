@@ -65,7 +65,7 @@ public class Log extends AppCompatActivity {
                                          int direction) {
                         int position = viewHolder.getAdapterPosition();
                         Cookie myWord = adapter.getCookieAtPosition(position);
-                        Toast.makeText(Log.this, "Deleting " +
+                        Toast.makeText(Log.this, "Deleted " +
                                 myWord.getCookie(), Toast.LENGTH_LONG).show();
 
                         // Delete the word
