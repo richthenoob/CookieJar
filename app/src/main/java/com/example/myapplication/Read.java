@@ -15,6 +15,7 @@ import androidx.lifecycle.Observer;
 
 import androidx.lifecycle.ViewModelProviders;
 
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 
@@ -36,6 +37,7 @@ public class Read extends AppCompatActivity {
         cookieViewModel = ViewModelProviders.of(this).get(CookieViewModel.class);
         cookieViewModel = ViewModelProviders.of(this).get(CookieViewModel.class);
         final TextView textView = findViewById(R.id.single);
+        textView.setMovementMethod(new ScrollingMovementMethod());
         final Random random = new Random();
         cookieViewModel.getAllWords().observe(this, new Observer<List<Cookie>>() {
             @Override
