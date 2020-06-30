@@ -53,27 +53,30 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="263dp"
-        android:layout_height="279dp"
+        android:layout_width="190dp"
+        android:layout_height="188dp"
+        android:layout_marginBottom="32dp"
         android:background="@android:color/transparent"
         android:contentDescription="@string/empty_jar_description"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.496"
-        app:srcCompat="@drawable/jar"
-        tools:srcCompat="@drawable/jar" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:srcCompat="@drawable/jar_with_paper"
+        tools:srcCompat="@drawable/jar_with_paper" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="611dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="4dp"
         android:contentDescription="@string/logo_description"
         android:cropToPadding="false"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo"
         tools:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
